@@ -1,68 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>TextMint - Simple Text Tools</title>
-<meta name="description" content="Free online text cleaning tools. Remove duplicates, empty lines, trim whitespace, convert JSON to Excel.">
+<title>Remove Duplicate Words - TextMint</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{
-font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-background:#fafafa;margin:0;padding:20px;color:#222;
-}
+body{font-family:system-ui;background:#fafafa;margin:0;padding:20px}
 .container{max-width:900px;margin:auto}
-h1{text-align:center;margin-bottom:5px}
-.subtitle{text-align:center;color:#666;margin-bottom:30px}
-
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-
-.card{
-background:white;border:1px solid #e5e5e5;
-padding:22px;border-radius:10px;
-text-decoration:none;color:inherit;
-display:block;
-}
-
-.card:hover{border-color:#111}
-.primary{grid-column:span 2;border:2px solid #111}
-
-@media (max-width:600px){
-.grid{grid-template-columns:1fr}
-.primary{grid-column:span 1}
-}
+textarea{width:100%;height:160px;padding:12px;border:1px solid #ddd;border-radius:8px}
+button{background:#111;color:white;border:none;padding:10px 15px;margin-top:10px;border-radius:6px}
+.card{background:white;padding:20px;border-radius:10px;border:1px solid #e5e5e5;margin-top:20px}
 </style>
 </head>
 
 <body>
 <div class="container">
 
-<h1>TextMint</h1>
-<p class="subtitle">Simple and fast text utilities</p>
+<a href="/">← Home</a>
+<h1>Remove Duplicate Words</h1>
 
-<div class="grid">
+<div class="card">
+<textarea id="input" placeholder="Paste text here..."></textarea>
+<br>
+<button onclick="process()">Remove Duplicate Words</button>
+</div>
 
-<a class="card primary" href="/remove-duplicates">
-<h3>Remove Duplicate Lines</h3>
-<p>Remove repeated lines instantly</p>
-</a>
-
-<a class="card" href="/remove-empty-lines">
-<h3>Remove Empty Lines</h3>
-<p>Delete blank lines from text</p>
-</a>
-
-<a class="card" href="/trim-whitespace">
-<h3>Trim Whitespace</h3>
-<p>Remove leading and trailing spaces</p>
-</a>
-
-<a class="card" href="/json-to-excel">
-<h3>JSON to Excel</h3>
-<p>Convert JSON to spreadsheet</p>
-</a>
-
+<div class="card">
+<textarea id="output"></textarea>
 </div>
 
 </div>
+
+<script>
+function process(){
+let text=document.getElementById("input").value;
+let words=text.split(/\s+/);
+let unique=[...new Set(words)];
+document.getElementById("output").value=unique.join(" ");
+}
+</script>
+
 </body>
 </html>
