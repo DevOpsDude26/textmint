@@ -1,0 +1,27 @@
+<script>
+function convert(){
+try{
+let json=JSON.parse(document.getElementById("input").value);
+let headers=Object.keys(json[0]);
+let csv=headers.join(",")+"\n";
+
+json.forEach(row=>{
+csv+=headers.map(h=>row[h]).join(",")+"\n";
+});
+
+document.getElementById("output").value=csv;
+}catch(e){
+alert("Invalid JSON");
+}
+}
+
+function copyOutput(){
+let output=document.getElementById("output");
+output.select();
+document.execCommand("copy");
+}
+
+function clearInput(){
+document.getElementById("input").value="";
+}
+</script>
