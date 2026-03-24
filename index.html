@@ -1,43 +1,128 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>TextMint - Simple Text Tools</title>
-<meta name="description" content="Free online text cleaning tools. Remove duplicates, empty lines, trim whitespace, convert JSON to Excel.">
+<title>TextMint — Simple Text Cleaning Tools</title>
+<meta name="description" content="Free online text cleaning tools. Remove duplicate lines, delete empty lines, trim whitespace, and convert JSON instantly. Runs in your browser.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
 font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-background:#fafafa;margin:0;padding:20px;color:#222;
+background:#f7f7f8;
+margin:0;
+padding:20px;
+color:#222;
 }
-.container{max-width:900px;margin:auto}
-h1{text-align:center;margin-bottom:5px}
-.subtitle{text-align:center;color:#666;margin-bottom:30px}
 
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.container{
+max-width:920px;
+margin:auto;
+}
+
+h1{
+text-align:center;
+margin-bottom:6px;
+}
+
+.subtitle{
+text-align:center;
+color:#666;
+margin-bottom:8px;
+}
+
+.trust{
+text-align:center;
+font-size:14px;
+color:#888;
+margin-bottom:26px;
+}
+
+.search{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #e5e5e5;
+margin-bottom:20px;
+font-size:14px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+}
 
 .card{
-background:white;border:1px solid #e5e5e5;
-padding:22px;border-radius:10px;
-text-decoration:none;color:inherit;
-display:block;
+background:white;
+padding:20px;
+border-radius:12px;
+text-decoration:none;
+color:inherit;
+box-shadow:0 2px 6px rgba(0,0,0,0.05);
+transition:all .15s ease;
+min-height:110px;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
-.card:hover{border-color:#111}
-.primary{grid-column:span 2;border:2px solid #111}
+.card:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 14px rgba(0,0,0,0.08);
+}
+
+.primary{
+grid-column:span 2;
+}
+
+.card h3{
+margin:0 0 6px 0;
+}
+
+.card p{
+margin:0;
+color:#666;
+font-size:14px;
+}
 
 @media (max-width:600px){
-.grid{grid-template-columns:1fr}
-.primary{grid-column:span 1}
+.grid{
+grid-template-columns:1fr;
+}
+.primary{
+grid-column:span 1;
+}
 }
 </style>
+
+<script>
+function filterTools(){
+let input=document.getElementById("search").value.toLowerCase();
+let cards=document.getElementsByClassName("card");
+
+for(let i=0;i<cards.length;i++){
+let text=cards[i].innerText.toLowerCase();
+cards[i].style.display=text.includes(input) ? "flex" : "none";
+}
+}
+</script>
+
 </head>
 
 <body>
+
 <div class="container">
 
 <h1>TextMint</h1>
-<p class="subtitle">Simple and fast text utilities</p>
+<p class="subtitle">Simple text cleaning tools that run instantly</p>
+<p class="trust">Runs in your browser • No upload • No login</p>
+
+<input
+id="search"
+class="search"
+placeholder="Search tools..."
+onkeyup="filterTools()"
+/>
 
 <div class="grid">
 
@@ -69,5 +154,6 @@ display:block;
 </div>
 
 </div>
+
 </body>
 </html>
