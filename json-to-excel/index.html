@@ -2,41 +2,70 @@
 <html>
 <head>
 <title>JSON to Excel — TextMint</title>
-<meta name="description" content="Convert JSON to Excel CSV format instantly.">
+<meta name="description" content="Convert JSON to Excel CSV format instantly. Free browser-based JSON converter.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{font-family:system-ui;background:#f7f7f8;margin:0;padding:20px}
 .container{max-width:920px;margin:auto}
-.top a{text-decoration:none;color:#666;font-size:14px}
-.desc{color:#666;margin-bottom:18px}
 .card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.05);margin-bottom:16px}
 textarea{width:100%;height:170px;padding:12px;border-radius:8px;border:1px solid #e5e5e5;font-family:monospace}
 button{background:#111;color:white;border:none;padding:9px 14px;border-radius:6px;margin-right:6px}
 .secondary{background:#eee;color:#222}
+.label{font-weight:600;margin-bottom:6px}
+.related a{margin-right:12px;font-size:14px;color:#555;text-decoration:none}
 .footer-note{font-size:13px;color:#888;margin-top:8px}
 </style>
+
 </head>
 
 <body>
+
 <div class="container">
 
-<div class="top"><a href="/">← Back to tools</a></div>
+<a href="/">← Back to tools</a>
 <h1>JSON to Excel</h1>
-<p class="desc">Convert JSON array into spreadsheet CSV format.</p>
+<p>Convert JSON array into spreadsheet CSV format.</p>
 
 <div class="card">
-<textarea id="input"></textarea>
+<div class="label">Input</div>
+<textarea id="input" placeholder='[{"name":"John","age":25}]'></textarea>
 <br><br>
+<button onclick="sample()">Try Sample</button>
 <button onclick="process()">Convert</button>
 <button class="secondary" onclick="clearInput()">Clear</button>
 </div>
 
 <div class="card">
+<div class="label">Output</div>
 <textarea id="output"></textarea>
 <br><br>
 <button onclick="copyOutput()">Copy</button>
 <p class="footer-note">Runs locally in your browser. No data uploaded.</p>
+</div>
+
+<div class="card related">
+<div class="label">Related tools</div>
+<a href="/remove-duplicates">Remove Duplicate Lines</a>
+<a href="/remove-empty-lines">Remove Empty Lines</a>
+<a href="/trim-whitespace">Trim Whitespace</a>
+</div>
+
+<div class="card">
+<h2>FAQ</h2>
+
+<p><b>What JSON format is supported?</b><br>
+Array of objects like [{"name":"John"}].
+</p>
+
+<p><b>Is data uploaded?</b><br>
+No. Everything runs locally in your browser.
+</p>
+
+<p><b>Can I open output in Excel?</b><br>
+Yes. Copy and paste into Excel.
+</p>
+
 </div>
 
 </div>
@@ -45,25 +74,45 @@ button{background:#111;color:white;border:none;padding:9px 14px;border-radius:6p
 function process(){
 try{
 let json=JSON.parse(document.getElementById("input").value);
+
+if(!Array.isArray(json)){
+alert("JSON must be array of objects");
+return;
+}
+
 let headers=Object.keys(json[0]);
 let csv=headers.join(",")+"\n";
+
 json.forEach(row=>{
 csv+=headers.map(h=>row[h] ?? "").join(",")+"\n";
 });
+
 document.getElementById("output").value=csv;
+
 }catch(e){
 alert("Invalid JSON");
 }
 }
+
+function sample(){
+document.getElementById("input").value=
+`[
+{"name":"John","age":25},
+{"name":"Jane","age":30}
+]`;
+}
+
 function copyOutput(){
-let output=document.getElementById("output");
-output.select();
+let o=document.getElementById("output");
+o.select();
 document.execCommand("copy");
 }
+
 function clearInput(){
 document.getElementById("input").value="";
 document.getElementById("output").value="";
 }
 </script>
+
 </body>
 </html>
