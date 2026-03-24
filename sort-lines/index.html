@@ -1,0 +1,18 @@
+<script>
+function sortLines(){
+let text=document.getElementById("input").value;
+let lines=text.split("\n");
+lines.sort();
+document.getElementById("output").value=lines.join("\n");
+}
+
+function copyOutput(){
+let output=document.getElementById("output");
+output.select();
+document.execCommand("copy");
+}
+
+function clearInput(){
+document.getElementById("input").value="";
+}
+</script>
