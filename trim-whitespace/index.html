@@ -18,18 +18,83 @@
 <meta property="og:title" content="Trim Whitespace - TextMint">
 <meta property="og:description" content="Remove leading and trailing spaces instantly. Free and private text tool.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://yourdomain.com/trim-whitespace/">
+<meta property="og:url" content="https://textmint.pages.dev/trim-whitespace/">
 
 <style>
-body{font-family:system-ui;background:#f7f7f8;margin:0;padding:20px}
-.container{max-width:920px;margin:auto}
-.card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.05);margin-bottom:16px}
-textarea{width:100%;height:170px;padding:12px;border-radius:8px;border:1px solid #e5e5e5;font-family:monospace}
-button{background:#111;color:white;border:none;padding:9px 14px;border-radius:6px;margin-right:6px}
-.secondary{background:#eee;color:#222}
-.label{font-weight:600;margin-bottom:6px}
-.related a{margin-right:12px;font-size:14px;color:#555;text-decoration:none}
-.footer-note{font-size:13px;color:#888;margin-top:8px}
+body{
+font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+background:#f7f7f8;
+margin:0;
+padding:20px;
+color:#222;
+}
+
+.container{
+max-width:920px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 2px 6px rgba(0,0,0,0.05);
+margin-bottom:16px;
+}
+
+textarea{
+width:100%;
+height:170px;
+padding:12px;
+border-radius:8px;
+border:1px solid #e5e5e5;
+font-family:monospace;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:9px 14px;
+border-radius:6px;
+margin-right:6px;
+cursor:pointer;
+}
+
+.secondary{
+background:#eee;
+color:#222;
+}
+
+.label{
+font-weight:600;
+margin-bottom:6px;
+}
+
+.related a{
+margin-right:12px;
+font-size:14px;
+color:#2563eb;
+text-decoration:none;
+}
+
+.footer-note{
+font-size:13px;
+color:#888;
+margin-top:8px;
+}
+
+a{
+color:#2563eb;
+text-decoration:none;
+}
+
+footer{
+text-align:center;
+margin-top:40px;
+font-size:13px;
+color:#888;
+}
 </style>
 </head>
 <body>
@@ -37,13 +102,16 @@ button{background:#111;color:white;border:none;padding:9px 14px;border-radius:6p
 <div class="container">
 
 <a href="/">← Back to tools</a>
+
 <h1>Trim Whitespace</h1>
 <p>Remove leading and trailing spaces.</p>
 
 <div class="card">
 <div class="label">Input</div>
 <textarea id="input"></textarea>
+
 <br><br>
+
 <button onclick="sample()">Try Sample</button>
 <button onclick="process()">Trim</button>
 <button class="secondary" onclick="clearInput()">Clear</button>
@@ -52,24 +120,38 @@ button{background:#111;color:white;border:none;padding:9px 14px;border-radius:6p
 <div class="card">
 <div class="label">Output</div>
 <textarea id="output"></textarea>
+
 <br><br>
+
 <button onclick="copyOutput()">Copy</button>
+
 <p class="footer-note">Runs locally in your browser.</p>
 </div>
 
 <div class="card related">
 <div class="label">Related tools</div>
-<a href="/remove-duplicates">Remove Duplicate Lines</a>
-<a href="/remove-empty-lines">Remove Empty Lines</a>
-<a href="/remove-duplicate-words">Remove Duplicate Words</a>
+<a href="/remove-duplicates/">Remove Duplicate Lines</a>
+<a href="/remove-empty-lines/">Remove Empty Lines</a>
+<a href="/remove-duplicate-words/">Remove Duplicate Words</a>
 </div>
 
 <div class="card">
 <h2>FAQ</h2>
-<p><b>What whitespace is removed?</b><br>Leading and trailing spaces.</p>
-<p><b>Does it remove spaces inside text?</b><br>No.</p>
-<p><b>Is this safe?</b><br>Yes, runs locally.</p>
+
+<p><strong>What whitespace is removed?</strong><br>
+Leading and trailing spaces.</p>
+
+<p><strong>Does it remove spaces inside text?</strong><br>
+No.</p>
+
+<p><strong>Is this safe?</strong><br>
+Yes, runs locally.</p>
+
 </div>
+
+<footer>
+© 2026 TextMint • Fast & private text tools
+</footer>
 
 </div>
 
@@ -79,9 +161,21 @@ let text=document.getElementById("input").value;
 let lines=text.split("\n").map(l=>l.trim());
 document.getElementById("output").value=lines.join("\n");
 }
-function sample(){document.getElementById("input").value=" apple \n banana \n orange "}
-function copyOutput(){let o=document.getElementById("output");o.select();document.execCommand("copy")}
-function clearInput(){document.getElementById("input").value="";document.getElementById("output").value=""}
+
+function sample(){
+document.getElementById("input").value=" apple \n banana \n orange ";
+}
+
+function copyOutput(){
+let o=document.getElementById("output");
+o.select();
+document.execCommand("copy");
+}
+
+function clearInput(){
+document.getElementById("input").value="";
+document.getElementById("output").value="";
+}
 </script>
 
 </body>
