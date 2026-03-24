@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+<loc>https://textmint.pages.dev/</loc>
+</url>
+
+<url>
+<loc>https://textmint.pages.dev/remove-duplicates</loc>
+</url>
+
+<url>
+<loc>https://textmint.pages.dev/remove-empty-lines</loc>
+</url>
+
+<url>
+<loc>https://textmint.pages.dev/trim-whitespace</loc>
+</url>
+
+<url>
+<loc>https://textmint.pages.dev/remove-duplicate-words</loc>
+</url>
+
+<url>
+<loc>https://textmint.pages.dev/json-to-excel</loc>
+</url>
+
+<url>
+<loc>https://textmint.pages.dev/about</loc>
+</url>
+
+<url>
+<loc>https://textmint.pages.dev/privacy</loc>
+</url>
+
+</urlset>
