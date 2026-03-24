@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Remove Duplicate Lines — TextMint</title>
-<meta name="description" content="Remove duplicate lines from text instantly. Runs in your browser with no upload.">
+<meta name="description" content="Remove duplicate lines from text instantly. Free online dedupe tool that runs in your browser.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -19,18 +19,10 @@ max-width:920px;
 margin:auto;
 }
 
-.top{
-margin-bottom:12px;
-}
-
 .top a{
 text-decoration:none;
 color:#666;
 font-size:14px;
-}
-
-h1{
-margin-bottom:4px;
 }
 
 .desc{
@@ -53,7 +45,6 @@ padding:12px;
 border-radius:8px;
 border:1px solid #e5e5e5;
 font-family:monospace;
-resize:vertical;
 }
 
 .actions{
@@ -73,6 +64,24 @@ margin-right:6px;
 .secondary{
 background:#eee;
 color:#222;
+}
+
+.label{
+font-weight:600;
+margin-bottom:6px;
+}
+
+.related a{
+display:inline-block;
+margin-right:12px;
+font-size:14px;
+color:#555;
+text-decoration:none;
+}
+
+.faq h3{
+margin-top:20px;
+margin-bottom:6px;
 }
 
 .footer-note{
@@ -96,7 +105,8 @@ margin-top:8px;
 <p class="desc">Remove repeated lines from text instantly.</p>
 
 <div class="card">
-<textarea id="input" placeholder="Paste text here..."></textarea>
+<div class="label">Input</div>
+<textarea id="input"></textarea>
 
 <div class="actions">
 <button onclick="sample()">Try Sample</button>
@@ -104,14 +114,37 @@ margin-top:8px;
 <button class="secondary" onclick="clearInput()">Clear</button>
 </div>
 
+</div>
+
 <div class="card">
-<textarea id="output" placeholder="Output..."></textarea>
+<div class="label">Output</div>
+<textarea id="output"></textarea>
 
 <div class="actions">
 <button onclick="copyOutput()">Copy</button>
 </div>
 
 <p class="footer-note">Runs locally in your browser. No data uploaded.</p>
+</div>
+
+<div class="card related">
+<div class="label">Related tools</div>
+<a href="/remove-empty-lines">Remove Empty Lines</a>
+<a href="/trim-whitespace">Trim Whitespace</a>
+<a href="/remove-duplicate-words">Remove Duplicate Words</a>
+</div>
+
+<div class="card faq">
+<h2>FAQ</h2>
+
+<h3>What does remove duplicate lines do?</h3>
+<p>It removes repeated lines and keeps only unique lines from your text.</p>
+
+<h3>Is my data uploaded?</h3>
+<p>No. Everything runs locally in your browser.</p>
+
+<h3>Does it preserve order?</h3>
+<p>Yes. The first occurrence of each line is preserved.</p>
 
 </div>
 
