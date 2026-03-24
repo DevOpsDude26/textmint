@@ -1,0 +1,20 @@
+<script>
+function sortLines(){
+    let text = document.getElementById("input").value;
+    let lines = text.split("\n");
+
+    let caseInsensitive = document.getElementById("caseInsensitive").checked;
+    let reverse = document.getElementById("reverse").checked;
+
+    lines.sort((a,b)=>{
+        if(caseInsensitive){
+            return a.toLowerCase().localeCompare(b.toLowerCase());
+        }
+        return a.localeCompare(b);
+    });
+
+    if(reverse) lines.reverse();
+
+    document.getElementById("output").value = lines.join("\n");
+}
+</script>
