@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>TextMint - Simple Text Tools</title>
-<meta name="description" content="Free online text tools. Remove duplicate lines, sort text, convert JSON to Excel instantly.">
+<meta name="description" content="Free online text cleaning tools. Remove duplicates, empty lines, trim whitespace, convert JSON to Excel.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -21,25 +21,10 @@ background:white;border:1px solid #e5e5e5;
 padding:22px;border-radius:10px;
 text-decoration:none;color:inherit;
 display:block;
-transition:all .15s ease;
 }
 
-.card:hover{
-border-color:#111;
-transform:translateY(-1px);
-}
-
+.card:hover{border-color:#111}
 .primary{grid-column:span 2;border:2px solid #111}
-
-.card h3{
-margin-top:0;
-margin-bottom:8px;
-}
-
-.card p{
-margin:0;
-color:#666;
-}
 
 @media (max-width:600px){
 .grid{grid-template-columns:1fr}
@@ -61,14 +46,19 @@ color:#666;
 <p>Remove repeated lines instantly</p>
 </a>
 
+<a class="card" href="/remove-empty-lines">
+<h3>Remove Empty Lines</h3>
+<p>Delete blank lines from text</p>
+</a>
+
+<a class="card" href="/trim-whitespace">
+<h3>Trim Whitespace</h3>
+<p>Remove leading and trailing spaces</p>
+</a>
+
 <a class="card" href="/json-to-excel">
 <h3>JSON to Excel</h3>
 <p>Convert JSON to spreadsheet</p>
-</a>
-
-<a class="card" href="/sort-lines">
-<h3>Sort Lines</h3>
-<p>Sort text alphabetically</p>
 </a>
 
 </div>
