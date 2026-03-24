@@ -99,10 +99,9 @@ margin-top:8px;
 <textarea id="input" placeholder="Paste text here..."></textarea>
 
 <div class="actions">
+<button onclick="sample()">Try Sample</button>
 <button onclick="process()">Remove Duplicates</button>
 <button class="secondary" onclick="clearInput()">Clear</button>
-</div>
-
 </div>
 
 <div class="card">
@@ -135,6 +134,15 @@ document.execCommand("copy");
 function clearInput(){
 document.getElementById("input").value="";
 document.getElementById("output").value="";
+}
+
+function sample(){
+document.getElementById("input").value=
+`apple
+banana
+apple
+orange
+banana`;
 }
 </script>
 
