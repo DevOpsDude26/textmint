@@ -2,41 +2,57 @@
 <html>
 <head>
 <title>Remove Empty Lines — TextMint</title>
-<meta name="description" content="Remove blank lines from text instantly. Runs in your browser.">
+<meta name="description" content="Remove empty lines from text instantly. Free online tool.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
 body{font-family:system-ui;background:#f7f7f8;margin:0;padding:20px}
 .container{max-width:920px;margin:auto}
-.top a{text-decoration:none;color:#666;font-size:14px}
-.desc{color:#666;margin-bottom:18px}
 .card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.05);margin-bottom:16px}
 textarea{width:100%;height:170px;padding:12px;border-radius:8px;border:1px solid #e5e5e5;font-family:monospace}
 button{background:#111;color:white;border:none;padding:9px 14px;border-radius:6px;margin-right:6px}
 .secondary{background:#eee;color:#222}
+.label{font-weight:600;margin-bottom:6px}
+.related a{margin-right:12px;font-size:14px;color:#555;text-decoration:none}
 .footer-note{font-size:13px;color:#888;margin-top:8px}
 </style>
 </head>
-
 <body>
+
 <div class="container">
 
-<div class="top"><a href="/">← Back to tools</a></div>
+<a href="/">← Back to tools</a>
 <h1>Remove Empty Lines</h1>
-<p class="desc">Delete blank lines from text.</p>
+<p>Delete blank lines from text.</p>
 
 <div class="card">
+<div class="label">Input</div>
 <textarea id="input"></textarea>
 <br><br>
+<button onclick="sample()">Try Sample</button>
 <button onclick="process()">Remove Empty Lines</button>
 <button class="secondary" onclick="clearInput()">Clear</button>
 </div>
 
 <div class="card">
+<div class="label">Output</div>
 <textarea id="output"></textarea>
 <br><br>
 <button onclick="copyOutput()">Copy</button>
 <p class="footer-note">Runs locally in your browser. No data uploaded.</p>
+</div>
+
+<div class="card related">
+<div class="label">Related tools</div>
+<a href="/remove-duplicates">Remove Duplicate Lines</a>
+<a href="/trim-whitespace">Trim Whitespace</a>
+<a href="/remove-duplicate-words">Remove Duplicate Words</a>
+</div>
+
+<div class="card">
+<h2>FAQ</h2>
+<p><b>What is an empty line?</b><br>A blank line without any characters.</p>
+<p><b>Is this tool safe?</b><br>Yes, it runs in your browser.</p>
+<p><b>Will formatting change?</b><br>No, only empty lines are removed.</p>
 </div>
 
 </div>
@@ -47,15 +63,12 @@ let text=document.getElementById("input").value;
 let lines=text.split("\n").filter(l=>l.trim()!="");
 document.getElementById("output").value=lines.join("\n");
 }
-function copyOutput(){
-let output=document.getElementById("output");
-output.select();
-document.execCommand("copy");
+function sample(){
+document.getElementById("input").value="apple\n\nbanana\n\norange";
 }
-function clearInput(){
-document.getElementById("input").value="";
-document.getElementById("output").value="";
-}
+function copyOutput(){let o=document.getElementById("output");o.select();document.execCommand("copy")}
+function clearInput(){document.getElementById("input").value="";document.getElementById("output").value=""}
 </script>
+
 </body>
 </html>
