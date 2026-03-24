@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>TextMint - Simple Text Tools</title>
+<meta name="description" content="Free online text tools. Remove duplicate lines, sort text, convert JSON to Excel instantly.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -19,12 +20,26 @@ h1{text-align:center;margin-bottom:5px}
 background:white;border:1px solid #e5e5e5;
 padding:22px;border-radius:10px;
 text-decoration:none;color:inherit;
-display:block
+display:block;
+transition:all .15s ease;
 }
 
-.card:hover{border-color:#111}
+.card:hover{
+border-color:#111;
+transform:translateY(-1px);
+}
 
 .primary{grid-column:span 2;border:2px solid #111}
+
+.card h3{
+margin-top:0;
+margin-bottom:8px;
+}
+
+.card p{
+margin:0;
+color:#666;
+}
 
 @media (max-width:600px){
 .grid{grid-template-columns:1fr}
@@ -41,22 +56,23 @@ display:block
 
 <div class="grid">
 
-<a class="card primary" href="remove-duplicates.html">
+<a class="card primary" href="/remove-duplicates">
 <h3>Remove Duplicate Lines</h3>
 <p>Remove repeated lines instantly</p>
 </a>
 
-<a class="card" href="json-to-excel.html">
+<a class="card" href="/json-to-excel">
 <h3>JSON to Excel</h3>
 <p>Convert JSON to spreadsheet</p>
 </a>
 
-<a class="card" href="sort-lines.html">
+<a class="card" href="/sort-lines">
 <h3>Sort Lines</h3>
 <p>Sort text alphabetically</p>
 </a>
 
 </div>
+
 </div>
 </body>
 </html>
