@@ -1,6 +1,0 @@
-https://textmint.pages.dev/
-https://textmint.pages.dev/remove-duplicates
-https://textmint.pages.dev/remove-empty-lines
-https://textmint.pages.dev/trim-whitespace
-https://textmint.pages.dev/remove-duplicate-words
-https://textmint.pages.dev/json-to-excel
