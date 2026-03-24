@@ -6,79 +6,34 @@
 
 <style>
 body{
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    background:#fafafa;
-    margin:0;
-    padding:20px;
-    color:#222;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+background:#fafafa;margin:0;padding:20px;color:#222;
 }
+.container{max-width:900px;margin:auto}
+h1{text-align:center;margin-bottom:5px}
+.subtitle{text-align:center;color:#666;margin-bottom:30px}
 
-.container{
-    max-width:900px;
-    margin:auto;
-}
-
-h1{
-    text-align:center;
-    margin-bottom:5px;
-}
-
-.subtitle{
-    text-align:center;
-    color:#666;
-    margin-bottom:30px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 
 .card{
-    background:white;
-    border:1px solid #e5e5e5;
-    padding:22px;
-    border-radius:10px;
-    text-decoration:none;
-    color:inherit;
-    transition:all .15s ease;
+background:white;border:1px solid #e5e5e5;
+padding:22px;border-radius:10px;
+text-decoration:none;color:inherit;
+display:block
 }
 
-.card:hover{
-    border-color:#111;
-    transform:translateY(-1px);
-}
+.card:hover{border-color:#111}
 
-.primary{
-    grid-column:span 2;
-    border:2px solid #111;
-}
-
-.card h3{
-    margin-top:0;
-    margin-bottom:8px;
-}
-
-.card p{
-    margin:0;
-    color:#666;
-}
+.primary{grid-column:span 2;border:2px solid #111}
 
 @media (max-width:600px){
-    .grid{
-        grid-template-columns:1fr;
-    }
-    .primary{
-        grid-column:span 1;
-    }
+.grid{grid-template-columns:1fr}
+.primary{grid-column:span 1}
 }
 </style>
-
 </head>
 
 <body>
-
 <div class="container">
 
 <h1>TextMint</h1>
@@ -86,24 +41,22 @@ h1{
 
 <div class="grid">
 
-<a class="card primary" href="/remove-duplicates.html">
+<a class="card primary" href="remove-duplicates.html">
 <h3>Remove Duplicate Lines</h3>
 <p>Remove repeated lines instantly</p>
 </a>
 
-<a class="card" href="/json-to-excel.html">
+<a class="card" href="json-to-excel.html">
 <h3>JSON to Excel</h3>
 <p>Convert JSON to spreadsheet</p>
 </a>
 
-<a class="card" href="/sort-lines.html">
+<a class="card" href="sort-lines.html">
 <h3>Sort Lines</h3>
 <p>Sort text alphabetically</p>
 </a>
 
 </div>
-
 </div>
-
 </body>
 </html>
