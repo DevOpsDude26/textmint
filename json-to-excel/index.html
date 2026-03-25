@@ -126,6 +126,7 @@ color:#888;
 <br><br>
 
 <button onclick="copyOutput()">Copy</button>
+<button onclick="download()">Download CSV</button>
 
 <p class="footer-note">Runs locally in your browser. No data uploaded.</p>
 </div>
@@ -202,6 +203,27 @@ function clearInput(){
 document.getElementById("input").value="";
 document.getElementById("output").value="";
 }
+
+function download(){
+let csv=document.getElementById("output").value;
+
+if(!csv){
+alert("No data to download");
+return;
+}
+
+let blob=new Blob([csv], {type:"text/csv"});
+let url=URL.createObjectURL(blob);
+
+let a=document.createElement("a");
+a.href=url;
+a.download="textmint.csv";
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+URL.revokeObjectURL(url);
+}
+
 </script>
 
 </body>
